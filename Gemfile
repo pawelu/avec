@@ -11,6 +11,7 @@ gem 'omniauth', '>= 1.1.4'
 gem 'omniauth-github', '>= 1.1.1'
 gem 'authority', '>= 2.9.0'
 gem 'rolify', '>= 3.2.0'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
 gem "mongoid", github: "mongoid/mongoid"
 gem "haml-rails"

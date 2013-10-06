@@ -1,0 +1,10 @@
+%header.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %strong= link_to 'Ensemble', root_path, class: 'navbar-brand'
+    %nav
+      %ul.nav.navbar-nav
+        - if @current_user
+          %li
+            %a= @current_user.nickname
+

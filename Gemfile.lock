@@ -8,6 +8,13 @@ GIT
       origin (~> 1.0)
       tzinfo (~> 0.3.37)
 
+GIT
+  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
+  revision: ab2f7dd92491bd490e545c18d32e966567b84a3b
+  specs:
+    bootstrap-sass (3.0.0.0)
+      sass (~> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -217,6 +224,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  bootstrap-sass!
   coffee-rails (~> 4.0.0)
   colored
   factory_girl_rails
