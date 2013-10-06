@@ -7,6 +7,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'thin', '>= 1.6.0'
+gem 'omniauth', '>= 1.1.4'
+gem 'omniauth-github', '>= 1.1.1'
 
 gem "mongoid", github: "mongoid/mongoid"
 gem "haml-rails"
