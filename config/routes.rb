@@ -1,4 +1,4 @@
-Ensemble::Application.routes.draw do
+Avec::Application.routes.draw do
   root to: 'dashboard#index'
   get '/auth/:provider/callback', to: 'sessions#create'
 

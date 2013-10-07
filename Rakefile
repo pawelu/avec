@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Ensemble::Application.load_tasks
+Avec::Application.load_tasks

@@ -1,7 +1,7 @@
 development:
   sessions:
     default:
-      database: ensemble_development
+      database: avec_development
       hosts:
         - localhost:27017
       options:
@@ -9,7 +9,7 @@ development:
 test:
   sessions:
     default:
-      database: ensemble_test
+      database: avec_test
       hosts:
         - localhost:27017
       options:
