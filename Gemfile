@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -12,17 +14,19 @@ gem 'omniauth-github', '>= 1.1.1'
 gem 'authority', '>= 2.9.0'
 gem 'rolify', '>= 3.2.0'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'haml-rails'
 
-gem "mongoid", github: "mongoid/mongoid"
-gem "haml-rails"
+gem 'rails_12factor', group: :production
+
 group :development, :test do
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem "awesome_print"
-  gem "colored"
-  gem "rspec-rails"
-  gem "guard-rspec"
-  gem "factory_girl_rails"
-  gem "pry-rails"
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'awesome_print'
+  gem 'colored'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  gem 'pry-rails'
   gem 'dotenv-rails'
 end
