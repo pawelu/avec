@@ -3,12 +3,11 @@
     .navbar-header
       %strong= link_to 'Avec', root_path, class: 'navbar-brand'
     %nav
-      %ul.nav.navbar-nav
+      %ul.nav.navbar-nav.pull-right
         - if @current_user
           %li
             %a= @current_user.nickname
-          %li
-            %a= link_to 'Log out', logout_path, :method => :delete
+          %li= link_to 'Log out', logout_path, :method => :delete
         - else
           %li= link_to 'Log in', login_path
 
