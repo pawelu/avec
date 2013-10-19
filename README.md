@@ -1,3 +1,3 @@
 ### Avec
 
-Because programming with others is so much fun!
+Because learning with others is so much fun!
