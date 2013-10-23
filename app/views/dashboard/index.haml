@@ -1,6 +1,6 @@
 .dashboard.container
+- if @current_user
   %h2 Events
-
   %ul
   - @current_user.events.each do |event|
     %h2=event.title
