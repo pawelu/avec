@@ -12,9 +12,6 @@ class EventsController < ApplicationController
   def show
   end
 
-  def edit
-  end
-
   def create
 
     @event = Event.new(event_params)
