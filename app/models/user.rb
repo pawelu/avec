@@ -7,4 +7,7 @@ class User
   field :name, type: String
   field :nickname, type: String
   field :email, type: String
+
+  has_many :events
+
 end
