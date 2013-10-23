@@ -5,6 +5,7 @@
   - @current_user.events.each do |event|
     %h2=event.title
     %p=event.content
+    %li= link_to 'Edit', edit_event_path(event)
 
 
 
