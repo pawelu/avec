@@ -16,6 +16,7 @@ gem 'rolify', '>= 3.2.0'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'haml-rails'
+gem 'simple_form'
 
 gem 'rails_12factor', group: :production
 
