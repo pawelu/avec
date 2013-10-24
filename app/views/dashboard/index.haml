@@ -5,6 +5,8 @@
   - @current_user.events.each do |event|
     %h2=event.title
     %p=event.content
+    %p=event.date_start
+    %p=event.date_end
     %a.btn.btn-primary{:href => edit_event_path(event)} Edit
 
 

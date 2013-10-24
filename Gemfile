@@ -17,6 +17,8 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'haml-rails'
 gem 'simple_form'
+# SORRY! But the 'datetimepicker-rails' name in RubyGems repo already taken.
+gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
 
 gem 'rails_12factor', group: :production
 

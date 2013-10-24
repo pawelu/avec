@@ -15,6 +15,12 @@ GIT
     bootstrap-sass (3.0.0.0)
       sass (~> 3.2)
 
+GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: f0316e55d6a46794e56d5e636ea838c9eaef34cb
+  specs:
+    datetimepicker-rails (0.0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -238,6 +244,7 @@ DEPENDENCIES
   bootstrap-sass!
   coffee-rails (~> 4.0.0)
   colored
+  datetimepicker-rails!
   dotenv-rails
   factory_girl_rails
   guard-rspec
