@@ -3,6 +3,6 @@
   = simple_form_for @event, html: { class: "form-horizontal" } do |f|
     = f.input :title, :input_html => { :class => "span6" }, :hint => "Add your event title here"
     = f.input :content, as: :text, input_html: { :class => "span6" }, :hint => "Add your event here"
-    = f.input :date_start, :label => 'Start', :as => :datetime_picker
-    = f.input :date_end, :label => 'End',:as => :datetime_picker
+    = f.input :date_start, :label => 'Start', :input_html => { :class => 'datepicker' }
+    = f.input :date_end, :label => 'End', :input_html => { :class => 'datepicker' }
     = f.button :submit, :class => 'btn-primary'

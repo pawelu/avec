@@ -7,6 +7,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 4.0.5'
 gem 'jbuilder', '~> 1.2'
 gem 'thin', '>= 1.6.0'
 gem 'omniauth', '>= 1.1.4'
@@ -17,8 +18,6 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'haml-rails'
 gem 'simple_form'
-# SORRY! But the 'datetimepicker-rails' name in RubyGems repo already taken.
-gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
 gem 'draper'
 
 gem 'rails_12factor', group: :production

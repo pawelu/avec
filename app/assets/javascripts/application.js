@@ -12,12 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-datetimepicker
+//= require jquery.ui.datepicker
+//= require_tree ./initializers
 //= require_tree .
-
-$(document).ready(function() {
-  $('.datetime_picker').datetimepicker({
-      language: 'en',
-      pick12HourFormat: true
-    });
-});
