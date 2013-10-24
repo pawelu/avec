@@ -10,4 +10,6 @@ class Event
 
   belongs_to :user, :class_name => "User"
 
+  validates_presence_of :title, :content, :date_start, :date_end
+
 end
