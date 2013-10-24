@@ -8,6 +8,8 @@
     %p=event.date_start
     %p=event.date_end
     %a.btn.btn-primary{:href => edit_event_path(event)} Edit
+    = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+
 
 
 
