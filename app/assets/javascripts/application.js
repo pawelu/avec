@@ -16,5 +16,8 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(".datetime_picker").datetimepicker();
+  $('.datetime_picker').datetimepicker({
+      language: 'en',
+      pick12HourFormat: true
+    });
 });
