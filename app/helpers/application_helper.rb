@@ -1,5 +1,10 @@
 module ApplicationHelper
+
   def format_date(time)
-   time.strftime("%Y-%m-%d")
+   if time.blank?
+     '-'
+   else
+     time.strftime("%Y-%m-%d")
+   end
   end
 end
