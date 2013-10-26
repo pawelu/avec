@@ -1,14 +1,11 @@
 .dashboard.container
 - if @current_user
-  %h2 Events
+  %h2 Wydarzenia
   %ul
   - @current_user.events.each do |event|
-    %h2=event.title
-    %p=event.content
-    %p=format_datetime(event.datetime_start)
-    %p=format_datetime(event.datetime_end)
-    %a.btn.btn-primary{:href => edit_event_path(event)} Edit
-    %btn.btn.btn-danger{:type => "button"}= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
-
-
-
+    %h2= event.name
+    %p= event.description
+    %p= format_datetime(event.datetime_start)
+    %p= format_datetime(event.datetime_end)
+    = link_to 'Edytuj', edit_event_path(event), class: 'btn btn-primary'
+    = link_to 'Usuń', event, method: :delete, data: { confirm: 'Czy chcesz na pewno usunąć to wydarzenie?' }, class: 'btn btn-danger'

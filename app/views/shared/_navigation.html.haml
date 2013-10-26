@@ -5,7 +5,7 @@
     %nav
       %ul.nav.navbar-nav.pull-right
         - if @current_user
-          %li= link_to 'New Event', new_event_path
+          %li= link_to 'Nowe wydarzenie', new_event_path
           %li
             %a= @current_user.nickname
           %li= link_to '', logout_path, :method => :delete, class: 'octicon octicon-log-out'

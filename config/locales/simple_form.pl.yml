@@ -1,0 +1,42 @@
+pl:
+  simple_form:
+    "yes": 'Tak'
+    "no": 'Nie'
+    required:
+      text: 'wymagane'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Labels and hints examples
+    labels:
+      event:
+        name: 'Nazwa'
+        description: 'Opis'
+        date_start: 'Data rozpoczęcia'
+        time_start: 'Godzina rozpoczęcia'
+        date_end: 'Data zakończenia'
+        time_end: 'Godzina zakończenia'
+    hints:
+      event:
+        name: 'Podaj nazwę wydarzenia'
+        description: 'Podaj opis wydarzenia'
+  mongoid:
+    errors:
+      models:
+        event:
+          attributes:
+            name:
+              blank: 'Podaj nazwę'
+            description:
+              blank: 'Podaj opis'
+            date_start:
+              blank: 'Podaj datę rozpoczęcia'
+            time_start:
+              blank: 'Podaj godzinę rozpoczęcia'
+            date_end:
+              blank: 'Podaj datę zakończenia'
+            time_end:
+              blank: 'Podaj godzinę zakończenia'

@@ -4,15 +4,15 @@ class Event
 
   attr_accessor :date_start, :time_start, :date_end, :time_end
 
-  field :title,         type: String
-  field :content,       type: String
+  field :name,         type: String
+  field :description,       type: String
   field :datetime_start,    type: DateTime
   field :datetime_end,      type: DateTime
   field :done,          type: Boolean, default: false
 
   belongs_to :user
 
-  validates_presence_of :title, :content
+  validates_presence_of :name, :description
 
   validates_presence_of :date_start, :time_start, :date_end, :time_end
 
