@@ -1,8 +1,12 @@
-.new-event-form
+.event-form
 
   = simple_form_for @event, html: { class: "form-horizontal" } do |f|
     = f.input :title, :input_html => { :class => "span6" }, :hint => "Add your event title here"
     = f.input :content, as: :text, input_html: { :class => "span6" }, :hint => "Add your event here"
-    = f.input :date_start, :label => 'Start', :input_html => { :class => 'datepicker' }
-    = f.input :date_end, :label => 'End', :input_html => { :class => 'datepicker' }
+    .event-start
+      = f.input :date_start, :input_html => { :class => 'datepicker' }
+      = f.input :time_start, :input_html => { :class => 'timepicker' }
+    .event-end
+      = f.input :date_end, :input_html => { :class => 'datepicker' }
+      = f.input :time_end, :input_html => { :class => 'timepicker' }
     = f.button :submit, :class => 'btn-primary'

@@ -4,7 +4,7 @@ module ApplicationHelper
    if time.blank?
      '-'
    else
-     time.strftime("%Y-%m-%d")
+     time.strftime("%Y-%m-%d %H:%M")
    end
   end
 end

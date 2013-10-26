@@ -1,0 +1,17 @@
+.event-form {
+  padding: 50px;
+  text-align: center;
+}
+
+.event-start, .event-end {
+  .controls {
+    margin-left: 10px;
+    display: inline;
+  }
+}
+
+.event-form {
+  .btn[type='submit'] {
+    margin-top: 10px;
+  }
+}

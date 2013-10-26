@@ -13,7 +13,6 @@ class EventsController < ApplicationController
   end
 
   def create
-
     @event = Event.new(event_params)
     @event.user = @current_user
     respond_to do |format|
@@ -28,8 +27,9 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event.assign_attributes(event_params)
     respond_to do |format|
-      if @event.update(event_params)
+      if @event.save
         format.html { redirect_to root_path, notice: 'Yupi!' }
         format.json { head :no_content }
       else
@@ -56,6 +56,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :content, :date_start, :date_end)
+      params.require(:event).permit(:title, :content, :date_start, :time_start, :date_end, :time_end)
     end
 end
