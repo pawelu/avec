@@ -4,7 +4,7 @@ def new
   end
 
   def create
-    @profile = Profile.new(params[:profile].permit(:movie))
+    @profile = Profile.new(profile_params)
     @profile.user = current_user
     respond_to do |format|
       if @profile.save
@@ -30,7 +30,6 @@ def new
         format.json { head :no_content }
       else
         format.html { render action: 'index' }
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,6 +43,6 @@ def new
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:movie)
+      params.require(:profile).permit()
     end
 end

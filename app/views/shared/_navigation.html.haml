@@ -1,9 +1,12 @@
 %header.navbar.navbar-default.navbar-fixed-top
   .container
-    .navbar-header
-      %strong= link_to 'Avec', root_path, class: 'navbar-brand'
-    %nav
-      %ul.nav.navbar-nav.pull-right
+    %strong= link_to 'Avec', root_path, class: 'navbar-brand'
+    %button.navbar-toggle{"data-target" => ".navHeaderCollapse", "data-toggle" => "collapse"}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    .collapse.navbar-collapse.navHeaderCollapse
+      %ul.nav.navbar-nav.navbar-right
         - if @current_user
           %li= link_to 'Nowe wydarzenie', new_event_path
           %li= link_to 'Profil', profile_path
