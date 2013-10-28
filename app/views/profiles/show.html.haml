@@ -5,10 +5,10 @@
         %h2
           %p Profil
         %h2
-          %p Imię:
+          %p Nick:
           = @current_user.nickname
         %h2
           %p Email:
           = @current_user.email
-        %h2= link_to 'Ustawienia', settings_path, class: 'btn btn-primary'
+        %h2= link_to 'Ustawienia', settings_path, id: "new_link", class: 'btn btn-primary'
 
