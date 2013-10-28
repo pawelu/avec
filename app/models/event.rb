@@ -19,12 +19,16 @@ class Event
   before_save :set_dates
 
   def set_dates
-    year, month, day = self.date_start.split('-').map(&:to_i)
-    hour, minutes = self.time_start.split(':').map(&:to_i)
+    year, month, day, hour, minutes = extract_datetime_parts(self.date_start, self.time_start)
     self.datetime_start = Time.zone.local(year, month, day, hour, minutes)
 
-    year, month, day = self.date_end.split('-').map(&:to_i)
-    hour, minutes = self.time_end.split(':').map(&:to_i)
+    year, month, day, hour, minutes = extract_datetime_parts(self.date_end, self.time_end)
     self.datetime_end = Time.zone.local(year, month, day, hour, minutes)
   end
+
+  private
+
+    def extract_datetime_parts(date, time)
+      [date, time].join(' ').split(/[ :-]/).map(&:to_i)
+    end
 end
