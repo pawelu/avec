@@ -16,14 +16,15 @@ class Event
 
   validates_presence_of :date_start, :time_start, :date_end, :time_end
 
-  DATES_FIX = [:start, :end]
   before_save :set_dates
 
   def set_dates
-    DATES_FIX.each do |fix|
-      year, month, day = self.send("date_#{fix}").split('-').map(&:to_i)
-      hour, minutes = self.send("time_#{fix}").split(':').map(&:to_i)
-      self.send("datetime_#{fix}=", DateTime.new(year, month, day, hour, minutes))
-    end
+    year, month, day = self.date_start.split('-').map(&:to_i)
+    hour, minutes = self.time_start.split(':').map(&:to_i)
+    self.datetime_start = Time.zone.local(year, month, day, hour, minutes)
+
+    year, month, day = self.date_end.split('-').map(&:to_i)
+    hour, minutes = self.time_end.split(':').map(&:to_i)
+    self.datetime_end = Time.zone.local(year, month, day, hour, minutes)
   end
 end
