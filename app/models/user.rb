@@ -9,5 +9,5 @@ class User
   field :email, type: String
 
   has_many :events
-
+  has_one :profile
 end

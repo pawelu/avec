@@ -1,0 +1,16 @@
+.container
+  %nav
+    - if @current_user
+      .span6
+        %h2
+          %strong Profil
+        %h3
+          %strong Imię:
+          = @current_user.name
+        %h3
+          %strong Email:
+          = @current_user.email
+        - if @profile
+          %h3
+            %strong Movie:
+            = @profile.movie

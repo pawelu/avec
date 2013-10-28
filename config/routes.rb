@@ -4,6 +4,9 @@ Avec::Application.routes.draw do
   get '/login' => redirect('/auth/github')
   delete '/logout' => 'sessions#destroy'
   resources :events
+  get '/profile' => 'profiles#show'
+  get '/settings' => 'profiles#edit'
+  resource :profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

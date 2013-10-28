@@ -40,3 +40,6 @@ pl:
               blank: 'Podaj datę zakończenia'
             time_end:
               blank: 'Podaj godzinę zakończenia'
+
+
+
