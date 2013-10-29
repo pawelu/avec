@@ -1,7 +1,8 @@
 class Event
   include Mongoid::Document
   include Mongoid::Timestamps
-
+  resourcify
+  include Authority::Abilities
   attr_accessor :date_start, :time_start, :date_end, :time_end
 
   field :name,         type: String
