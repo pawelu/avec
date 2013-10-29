@@ -47,7 +47,11 @@
     end
   end
 
+  def past
+    @events = Event.past
 
+    render 'dashboard/index'
+  end
 
   private
     def set_event

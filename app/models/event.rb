@@ -11,6 +11,14 @@ class Event
   field :datetime_end,      type: DateTime
   field :done,          type: Boolean, default: false
 
+  scope :incoming, -> {
+    where(datetime_start: beginning_of_today .. (beginning_of_today + 1.month))
+  }
+
+  scope :past, -> {
+    where(:datetime_start.lt => beginning_of_today)
+  }
+
   belongs_to :user
 
   validates_presence_of :name, :description
@@ -31,5 +39,9 @@ class Event
 
     def extract_datetime_parts(date, time)
       [date, time].join(' ').split(/[ :-]/).map(&:to_i)
+    end
+
+    def self.beginning_of_today
+      Time.zone.now.beginning_of_day
     end
 end
