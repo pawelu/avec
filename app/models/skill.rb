@@ -4,7 +4,7 @@ class Skill
   field :name, type: String
   field :level, type: Integer
 
-  belongs_to :user
+  has_and_belongs_to_many :users
 
   validates_presence_of :name, :level
 end
