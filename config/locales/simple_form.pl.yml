@@ -19,27 +19,8 @@ pl:
         time_start: 'Godzina rozpoczęcia'
         date_end: 'Data zakończenia'
         time_end: 'Godzina zakończenia'
+        capacity: 'Limit osób'
     hints:
       event:
         name: 'Podaj nazwę wydarzenia'
         description: 'Podaj opis wydarzenia'
-  mongoid:
-    errors:
-      models:
-        event:
-          attributes:
-            name:
-              blank: 'Podaj nazwę'
-            description:
-              blank: 'Podaj opis'
-            date_start:
-              blank: 'Podaj datę rozpoczęcia'
-            time_start:
-              blank: 'Podaj godzinę rozpoczęcia'
-            date_end:
-              blank: 'Podaj datę zakończenia'
-            time_end:
-              blank: 'Podaj godzinę zakończenia'
-
-
-

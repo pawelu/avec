@@ -5,11 +5,12 @@ class Event
   include Authority::Abilities
   attr_accessor :date_start, :time_start, :date_end, :time_end
 
-  field :name,         type: String
+  field :name,              type: String
   field :description,       type: String
   field :datetime_start,    type: DateTime
   field :datetime_end,      type: DateTime
-  field :done,          type: Boolean, default: false
+  field :done,              type: Boolean, default: false
+  field :capacity,          type: Integer
 
   scope :incoming, -> {
     where(datetime_start: beginning_of_today .. (beginning_of_today + 1.month))
@@ -21,9 +22,11 @@ class Event
 
   belongs_to :user
 
-  validates_presence_of :name, :description
+  validates_presence_of :name, :description, :capacity
 
   validates_presence_of :date_start, :time_start, :date_end, :time_end
+
+  validates :capacity, numericality: { only_integer: true, greater_than_or_equal_to: 2 }
 
   before_save :set_dates
 

@@ -9,4 +9,5 @@
     .event-end
       = f.input :date_end, :input_html => { :class => 'datepicker', :value => format_date(@event.datetime_end) }
       = f.input :time_end, :input_html => { :class => 'timepicker', :value => format_time(@event.datetime_end) }
+    = f.input :capacity, as: :integer, :input_html => { :min => 2, :value => 2 }
     = f.button :submit, 'Zapisz', :class => 'btn-primary'
