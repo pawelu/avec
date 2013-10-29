@@ -6,3 +6,7 @@
   border: 1px solid #000;
   border-radius: 5px;
 }
+.title {
+  font-size: 26px;
+  text-align: center;
+}

@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+  class EventsController < ApplicationController
   before_action :set_event
 
   def index

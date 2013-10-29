@@ -1,6 +1,6 @@
 .dashboard.container
 - if @current_user
-  %h2 Wydarzenia
+  .title Wydarzenia
   - @current_user.events.each do |event|
     .col-md-3
       %h2= event.name
