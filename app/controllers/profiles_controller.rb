@@ -1,35 +1,40 @@
 class ProfilesController < ApplicationController
-def new
+
+  before_action :set_skill
+
+  def new
     @profile = Profile.new
   end
 
   def create
-    @profile = Profile.new(profile_params)
-    @profile.user = current_user
+    @skill = @current_user.skills.new(skill_params)
+
     respond_to do |format|
-      if @profile.save
+      if @skill.save
         format.html { redirect_to profile_path, notice: 'Yeah.' }
         format.json { render action: 'show', status: :created, location: @profile }
       else
-        format.html { render action: 'index' }
+        format.html { render action: 'show' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def show
+    @skills = @current_user.skills
   end
 
   def edit
+    @skill = Skill.new
   end
 
   def update
     respond_to do |format|
-      if @profile.update(profile_params)
+      if @skill.update(skill_params)
         format.html { redirect_to profile_path, notice: 'Yupi!' }
         format.json { head :no_content }
       else
-        format.html { render action: 'index' }
+        format.html { render action: 'show' }
       end
     end
   end
@@ -41,8 +46,14 @@ def new
       @profile = current_user.profile || Profile.new
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def profile_params
-      params.require(:profile).permit()
+    def set_skill
+
+      @skill = Skill.new
+      @skill = @current_user.skills.find(params[:ids]) if params[:ids]
+      @skill = @current_user.skills(params[:current_user_id])
+    end
+
+    def skill_params
+      params.require(:skill).permit(:name, :level, :skill_type)
     end
 end

@@ -10,5 +10,12 @@
         %h2
           %p Email:
           = @current_user.email
+        %h2
+          %p Skills
+          = @current_user.skills.inspect
+          = @skill.name
         %h2= link_to 'Ustawienia', settings_path, id: "new_link", class: 'btn btn-primary'
+
+
+
 

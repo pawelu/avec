@@ -11,6 +11,6 @@ class User
   field :email, type: String
 
   has_many :events
-  has_and_belongs_to_many :skills
+  has_and_belongs_to_many :skills, class_name: 'Skill', index: true
   has_one :profile
 end

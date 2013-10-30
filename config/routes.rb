@@ -7,7 +7,9 @@ Avec::Application.routes.draw do
   resources :events
   get '/profile' => 'profiles#show'
   get '/settings' => 'profiles#edit'
-  resource :profile
+  resource :profile do
+    get '/skills' => 'profile#edit'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
