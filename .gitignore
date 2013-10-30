@@ -17,3 +17,5 @@
 
 .env
 .fuse_hidden*
+.tags
+.gemtags
