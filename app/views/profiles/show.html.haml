@@ -12,8 +12,11 @@
           = @current_user.email
         %h2
           %p Skills
-          = @current_user.skills.inspect
-          = @skill.name
+        - if @skill
+          - @skills.each do |skill|
+            .col-md-3
+              %h2= skill.name
+              %p= skill.level
         %h2= link_to 'Ustawienia', settings_path, id: "new_link", class: 'btn btn-primary'
 
 

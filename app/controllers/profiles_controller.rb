@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+    @skill = Skill.new
   end
 
   def create
@@ -21,7 +22,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @skills = @current_user.skills
+    @skills = @current_user.skills(params[:current_user_id])
   end
 
   def edit
@@ -29,6 +30,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    skill = current_user.skill.find(params[:id])
+    skill.update_attributes!(skill_params)
     respond_to do |format|
       if @skill.update(skill_params)
         format.html { redirect_to profile_path, notice: 'Yupi!' }
@@ -47,8 +50,6 @@ class ProfilesController < ApplicationController
     end
 
     def set_skill
-
-      @skill = Skill.new
       @skill = @current_user.skills.find(params[:ids]) if params[:ids]
       @skill = @current_user.skills(params[:current_user_id])
     end
