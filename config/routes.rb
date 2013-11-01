@@ -8,8 +8,10 @@ Avec::Application.routes.draw do
   get '/profile' => 'profiles#show'
   get '/settings' => 'profiles#edit'
   resource :profile do
-    get '/skills' => 'profile#edit'
+    get '/skills' => 'profiles#edit'
   end
+    delete '/skill' => 'profiles#destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

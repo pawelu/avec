@@ -13,10 +13,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @skill.save
         format.html { redirect_to profile_path, notice: 'Yeah.' }
-        format.json { render action: 'show', status: :created, location: @profile }
-      else
-        format.html { render action: 'show' }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -40,6 +37,12 @@ class ProfilesController < ApplicationController
         format.html { render action: 'show' }
       end
     end
+  end
+
+  def destroy
+    @skill.destroy
+    redirect_to profile_path
+
   end
 
 
