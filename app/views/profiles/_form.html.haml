@@ -1,5 +1,6 @@
 .event-form
-  = simple_form_for @skill, url: '/profile', :remote => true, html: { class: "form-horizontal" } do |f|
+  = simple_form_for @skill, url: '/profile', html: { class: "form-horizontal" } do |f|
     = f.input :name, :input_html => { :class => "span6" }
     = f.input :level, as: :integer, :input_html => { :min => 0, :value => 0, :max => 5 }
     = f.button :submit, 'Zapisz', :class => 'btn-primary'
+

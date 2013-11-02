@@ -14,6 +14,9 @@ class ProfilesController < ApplicationController
       if @skill.save
         format.html { redirect_to profile_path, notice: 'Yeah.' }
         format.js
+      else
+        format.html { render action: 'show' }
+        format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +56,8 @@ class ProfilesController < ApplicationController
     end
 
     def set_skill
-      @skill = @current_user.skills.find(params[:ids]) if params[:ids]
+      @skill = Skill.new
+      @skill = @current_user.skill.find(params[:id]) if params[:id]
       @skill = @current_user.skills(params[:current_user_id])
     end
 
