@@ -1,8 +1,8 @@
 .event-form
-  .span4.well
-    = simple_form_for @event, html: { class: "form-horizontal" } do |f|
-      = f.input :name, :input_html => { :class => "span6" }
-      = f.input :description, as: :text, input_html: { :class => "span6" }
+  .col-md-5.well
+    = simple_form_for(@event, :defaults => { :wrapper_html => {:class => 'form-group'}, :input_html => { :class => 'form-control' } }) do |f|
+      = f.input :name, :wrapper_html => { :class => "span4" }
+      = f.input :description, as: :text, wrapper_html: { :class => "span4" }
       .event-start
         = f.input :date_start, :input_html => { :class => 'datepicker', :value => format_date(@event.datetime_start) }
         = f.input :time_start, :input_html => { :class => 'timepicker', :value => format_time(@event.datetime_start) }
@@ -11,3 +11,5 @@
         = f.input :time_end, :input_html => { :class => 'timepicker', :value => format_time(@event.datetime_end) }
       = f.input :capacity, as: :integer, :input_html => { :min => 2, :value => 2 }
       = f.button :submit, 'Zapisz', :class => 'btn-primary'
+
+

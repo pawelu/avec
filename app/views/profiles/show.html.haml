@@ -13,11 +13,15 @@
         .skill
           %h1 Skills
           - @skills.each do |skill|
-            .col-md-3
-              %p Skill
-              %h2= skill.name
-              %p Level
-              %h2= skill.level
+            .col-md-3.well
+              .col-md-2.skill
+                %p Umiejętność
+                %p
+                %strong= skill.name
+              .col-md-1.skill
+                %p Poziom
+                %p
+                %strong= skill.level
               = link_to 'Usuń', skill, method: :delete, data: { confirm: 'Czy chcesz na pewno usunąć to wydarzenie?' }, class: 'btn btn-danger'
 %h2= link_to 'Ustawienia', settings_path, id: 'new_link', class: 'btn btn-primary', :remote => true
 
