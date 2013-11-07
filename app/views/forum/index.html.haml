@@ -1,0 +1,7 @@
+%h1 Tematy
+
+= link_to 'Nowy temat', new_topic_path, class: 'btn btn-primary'
+
+- @topics.each do |topic|
+  .topic
+    %h2= link_to topic.name, topic

@@ -1,0 +1,10 @@
+%h1 Nowy temat
+
+.new-topic-form
+  = form_for @topic do |f|
+    .field
+      = f.label :name, 'Nazwa'
+      = f.text_field :name
+
+    .action
+      = f.submit 'Zapisz'
