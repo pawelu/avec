@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @skill = @current_user.skills.new(skill_params)
+    @skill = current_user.skills.new(skill_params)
 
     respond_to do |format|
       if @skill.save
@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @skills = @current_user.skills(params[:current_user_id])
+    @skills = current_user.skills(params[:current_user_id])
   end
 
   def edit
@@ -57,8 +57,8 @@ class ProfilesController < ApplicationController
 
     def set_skill
       @skill = Skill.new
-      @skill = @current_user.skill.find(params[:id]) if params[:id]
-      @skill = @current_user.skills(params[:current_user_id])
+      @skill = current_user.skill.find(params[:id]) if params[:id]
+      @skill = current_user.skills(params[:current_user_id])
     end
 
     def skill_params

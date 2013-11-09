@@ -14,7 +14,7 @@
 
   def create
     @event = Event.new(event_params)
-    @event.user = @current_user
+    @event.user = current_user
     respond_to do |format|
       if @event.save
         format.html { redirect_to root_path, notice: 'New event was created.' }
@@ -56,7 +56,7 @@
   private
     def set_event
       @event = Event.new
-      @event = @current_user.events.find(params[:id]) if params[:id]
+      @event = current_user.events.find(params[:id]) if params[:id]
     end
 
     def event_params

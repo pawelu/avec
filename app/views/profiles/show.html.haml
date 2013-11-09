@@ -1,15 +1,15 @@
 .container
   %nav
-    - if @current_user
+    - if current_user
       .span6
         %h2
           %p Profil
         %h2
           %p Nick:
-          = @current_user.nickname
+          = current_user.nickname
         %h2
           %p Email:
-          = @current_user.email
+          = current_user.email
         .skill
           %h1 Skills
           - @skills.each do |skill|
