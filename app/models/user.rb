@@ -9,6 +9,7 @@ class User
   field :name, type: String
   field :nickname, type: String
   field :email, type: String
+  field :avatar, type: String
 
   has_many :events
   has_and_belongs_to_many :skills, class_name: 'Skill', index: true

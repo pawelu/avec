@@ -20,7 +20,8 @@ class SessionsController < ApplicationController
         uid: auth["uid"],
         name: auth["info"]["name"],
         nickname: auth['info']['nickname'],
-        email: auth['info']['email']
+        email: auth['info']['email'],
+        avatar: auth['info']['image']
       }
     end
 end

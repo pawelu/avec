@@ -4,5 +4,10 @@
 
 - @posts.each do |post|
   .post
-    %h1= post.user.nickname
-    %h2= post.content
+    .author
+      .avatar= image_tag post.user.avatar, alt: 'avatar'
+      .nickname
+        %strong= post.user.nickname
+    .content
+      %p= post.content
+    .clear
