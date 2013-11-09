@@ -1,1 +1,8 @@
 %h1= @topic.name
+
+= link_to 'Nowa wiadomość', new_topic_post_path(@topic), class: 'btn btn-primary'
+
+- @posts.each do |post|
+  .post
+    %h1= post.user.nickname
+    %h2= post.content

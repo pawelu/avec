@@ -1,0 +1,12 @@
+%h1 Nowa wiadomość
+
+.new-post-form
+  = form_for [@topic, @post] do |f|
+    .field
+      = f.label :content, 'Treść'
+      = f.text_field :content
+
+    .action
+      = f.submit 'Zapisz'
+
+= link_to 'Wróc do tematu', topic_path(@topic)
