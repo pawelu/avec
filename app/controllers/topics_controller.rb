@@ -18,6 +18,14 @@ class TopicsController < ApplicationController
     @posts = @topic.posts.order_by(:created_at.desc)
   end
 
+  def destroy
+    topic = Topic.find(params[:id])
+    topic.destroy
+
+    redirect_to forum_path
+  end
+
+
   private
 
     def topic_params
