@@ -1,0 +1,15 @@
+= render 'shared/breadcrumbs'
+
+%h1= @topic.name
+
+= link_to 'Nowa wiadomość', new_topic_post_path(@topic), class: 'btn btn-primary'
+
+- @posts.each do |post|
+  .post
+    .author
+      .avatar= image_tag post.user.avatar, alt: 'avatar'
+      .nickname
+        %strong= post.user.nickname
+    .content
+      %p= post.content
+    .clear

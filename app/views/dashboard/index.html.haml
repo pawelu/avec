@@ -1,0 +1,5 @@
+.dashboard.container
+  - if current_user
+    = render 'dashboard/user'
+  - else
+    = render 'dashboard/guest'

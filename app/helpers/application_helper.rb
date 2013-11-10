@@ -11,4 +11,9 @@ module ApplicationHelper
   def format_time(datetime)
     datetime.strftime("%H:%M") if datetime.present?
   end
+
+
+  def remove_button(object)
+    link_to 'Usuń', object, method: :delete, data: { confirm: 'Czy chcesz na pewno usunąć?' }, class: 'btn btn-danger'
+  end
 end

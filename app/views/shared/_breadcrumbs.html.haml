@@ -1,0 +1,6 @@
+%ol.breadcrumb
+  %li
+    = link_to 'Forum', forum_path, :class => ((controller_name == 'forum') ? 'active' : 'normal')
+  - if controller_name == 'topics' || controller_name == 'posts'
+    %li
+      = link_to @topic.name, topic_path(@topic), :class => 'active'

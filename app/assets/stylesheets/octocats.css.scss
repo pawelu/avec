@@ -1,0 +1,25 @@
+.github > div {
+  float: left;
+  width: 300px;
+}
+
+.github {
+  width: 900px;
+  margin: 0;
+
+  .login {
+    height: 300px;
+
+    a {
+      display: block;
+      min-width: 180px;
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
