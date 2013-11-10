@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Skill.find_or_create_by name: 'Fotografia', level: 1
+Skill.find_or_create_by name: "Fotografia", level: 1
 Skill.find_or_create_by name: 'Angielski', level: 1
 Skill.find_or_create_by name: 'Hiszpański', level: 1
 Skill.find_or_create_by name: 'Wrotki', level: 1

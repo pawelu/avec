@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @skill.save
         format.html { redirect_to profile_path, notice: 'Yeah.' }
-        format.js
+        format.json { render render action: 'show', status: :created, location: @skill}
       else
         format.html { render action: 'show' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class ProfilesController < ApplicationController
 
     def set_skill
       @skill = Skill.new
-      @skill = @current_user.skill.find(params[:id]) if params[:id]
+      @skills = @current_user.skill.find(params[:id]) if params[:id]
       @skill = @current_user.skills(params[:current_user_id])
     end
 

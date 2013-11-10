@@ -21,4 +21,7 @@
   width: 160px;
 }
 
-
+.done-true {
+  text-decoration: line-through;
+  color:red;
+}
