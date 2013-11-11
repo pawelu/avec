@@ -57,7 +57,6 @@ class ProfilesController < ApplicationController
 
     def set_skill
       @skill = Skill.new
-
       @skill = current_user.skill.find(params[:id]) if params[:id]
       @skill = current_user.skills(params[:current_user_id])
     end

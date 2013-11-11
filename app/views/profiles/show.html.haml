@@ -10,6 +10,8 @@
         %h2
           %p Email:
           = @current_user.email
+
+%h2= link_to 'Ustawienia', settings_path, id: 'new_link', class: 'btn btn-primary'
 %div{"ng-app" => ""}
   %div{"ng-controller" => "SkillCtrl"}
     %h1 Umiejętności: {{getTotalSkills()}}
@@ -17,6 +19,10 @@
       %li{"ng-repeat" => "skill in skills"}
         %input{"ng-model" => "skill.done", :type => "checkbox"}
           %span{:class => "done-{{skill.done}}"} {{skill.text}}
+          .ratingContainer{"ng-repeat" => "rating in ratings"}
+          {{rating.name}}: {{rating.rating}}
+          %rate{:model => "rating"}
+          %pre level: {{skill.rating}}
     %form.form-horizontal
     %input{"ng-model" => "formSkillText", "ng-model-instant" => "", :type => "text"}
       %button.btn{"ng-click" => "addSkill()"}

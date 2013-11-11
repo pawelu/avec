@@ -1,3 +1,4 @@
+var app = angular.module("Avec", []);
 function SkillCtrl($scope) {
 
   $scope.data = 4;
@@ -16,4 +17,9 @@ function SkillCtrl($scope) {
     $scope.formSkillText = '';
   };
 
+  $scope.ratings = [
+  {max:5, rating:0,name:"Skill"}
+  ];
+
 }
+

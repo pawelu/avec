@@ -24,4 +24,15 @@
 .done-true {
   text-decoration: line-through;
   color:red;
+  height: 50px;
+  width: 40px;
+  border: 1px solid red;
 }
+
+.skill-box {
+  height: 50px;
+  width: 40px;
+  border: 1px solid red;
+}
+.rating {
+  background-image: url(/img/stars.png)
