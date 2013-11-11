@@ -19,6 +19,7 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'draper'
+gem 'angularjs-rails', '~> 1.2.0'
 
 gem 'rails_12factor', group: :production
 

@@ -15,4 +15,5 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.timepicker
 //= require_tree ./initializers
+//= require angular
 //= require_tree .
