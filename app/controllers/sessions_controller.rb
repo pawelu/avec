@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_or_create_by(omniauth_auth)
+    auth = request.env['omniauth.auth']
+    user = User.find_or_initialize_by(basic_user_attributes(auth))
+    user.assign_attributes(extra_user_attributes(auth))
+
+    user.save!
+
     session[:user_id] = user.id
     redirect_to root_url
   end
@@ -12,16 +17,19 @@ class SessionsController < ApplicationController
 
   protected
 
-    def omniauth_auth
-      auth = request.env['omniauth.auth']
-
+    def basic_user_attributes(auth)
       {
-        provider: auth["provider"],
-        uid: auth["uid"],
-        name: auth["info"]["name"],
-        nickname: auth['info']['nickname'],
+        provider: auth['provider'],
+        uid: auth['uid'],
+        nickname: auth['info']['nickname']
+      }
+    end
+
+    def extra_user_attributes(auth)
+      {
+        avatar: auth['info']['image'],
         email: auth['info']['email'],
-        avatar: auth['info']['image']
+        name: auth["info"]["name"]
       }
     end
 end
