@@ -1,4 +1,4 @@
-function SkillCtrl($scope) {
+var SkillCtrl = ['$scope', function ($scope) {
 
   $scope.data = 4;
 
@@ -16,4 +16,4 @@ function SkillCtrl($scope) {
     $scope.formSkillText = '';
   };
 
-}
+}];
