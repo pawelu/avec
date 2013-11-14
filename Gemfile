@@ -33,4 +33,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end
