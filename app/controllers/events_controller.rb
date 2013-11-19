@@ -60,6 +60,6 @@
     end
 
     def event_params
-      params.require(:event).permit(:name, :description, :date_start, :time_start, :date_end, :time_end, :capacity)
+      params.require(:event).permit(:name, :description, :date_start, :time_start, :date_end, :time_end, :capacity, :address)
     end
 end

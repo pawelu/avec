@@ -15,6 +15,7 @@ pl:
       event:
         name: 'Nazwa'
         description: 'Opis'
+        address: 'Adres'
         date_start: 'Data rozpoczęcia'
         time_start: 'Godzina rozpoczęcia'
         date_end: 'Data zakończenia'

@@ -11,6 +11,7 @@ class Event
   field :datetime_end,      type: DateTime
   field :done,              type: Boolean, default: false
   field :capacity,          type: Integer
+  field :address,           type: String
 
   scope :incoming, -> {
     where(datetime_start: beginning_of_today .. (beginning_of_today + 1.month))
@@ -22,7 +23,7 @@ class Event
 
   belongs_to :user
 
-  validates_presence_of :name, :description, :capacity
+  validates_presence_of :name, :description, :address, :capacity
 
   validates_presence_of :date_start, :time_start, :date_end, :time_end
 

@@ -3,6 +3,7 @@
   .col-md-3
     %h2= event.name
     %p= event.description
+    %p= event.address
     %p= format_datetime(event.datetime_start)
     %p= format_datetime(event.datetime_end)
     %p Limit osób: #{event.capacity}
