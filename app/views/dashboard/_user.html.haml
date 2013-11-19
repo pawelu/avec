@@ -1,16 +1,3 @@
 .title Wydarzenia
 - @events.each do |event|
-  .col-md-3
-    %h2= event.name
-    %p= event.description
-    %p= event.address
-    %p= format_datetime(event.datetime_start)
-    %p= format_datetime(event.datetime_end)
-    %p Limit osób: #{event.capacity}
-
-    - if current_user.can_update?(event)
-      = link_to('Edytuj', edit_event_path(event), class: 'btn btn-primary')
-
-    - if current_user.can_delete?(event)
-      = link_to 'Usuń', event, method: :delete, data: { confirm: 'Czy chcesz na pewno usunąć to wydarzenie?' }, class: 'btn btn-danger'
-  .col-md-1
+  = render event

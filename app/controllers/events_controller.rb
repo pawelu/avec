@@ -53,6 +53,22 @@
     render 'dashboard/index'
   end
 
+  def participate
+    event = Event.find(params[:id])
+    event.participants.push(current_user)
+    event.save!
+
+    redirect_to root_path
+  end
+
+  def retreat
+    event = Event.find(params[:id])
+    event.participants.delete(current_user)
+    event.save!
+
+    redirect_to root_path
+  end
+
   private
     def set_event
       @event = Event.new

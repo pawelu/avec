@@ -6,8 +6,13 @@ Avec::Application.routes.draw do
   get '/login' => redirect('/auth/github')
   delete '/logout' => 'sessions#destroy'
 
-  get '/events/past' => 'events#past'
-  resources :events
+  resources :events do
+    get :past, on: :collection
+    member do
+      post :participate
+      post :retreat
+    end
+  end
 
   get '/profile' => 'profiles#show'
   get '/settings' => 'profiles#edit'

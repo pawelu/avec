@@ -17,4 +17,6 @@ class User
 
   has_many :topics
   has_many :posts
+
+  belongs_to :event, inverse_of: :participant
 end

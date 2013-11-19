@@ -13,6 +13,8 @@ class Event
   field :capacity,          type: Integer
   field :address,           type: String
 
+  has_many :participants, class_name: 'User'
+
   scope :incoming, -> {
     where(datetime_start: beginning_of_today .. (beginning_of_today + 1.month))
   }
@@ -25,11 +27,15 @@ class Event
 
   validates_presence_of :name, :description, :address, :capacity
 
-  validates_presence_of :date_start, :time_start, :date_end, :time_end
+  validates_presence_of :date_start, :time_start, :date_end, :time_end, unless: -> {
+    self.datetime_start.present? && self.datetime_end.present?
+  }
 
   validates :capacity, numericality: { only_integer: true, greater_than_or_equal_to: 2 }
 
-  before_save :set_dates
+  before_save :set_dates, unless: -> {
+    self.datetime_start.present? && self.datetime_end.present?
+  }
 
   def set_dates
     year, month, day, hour, minutes = extract_datetime_parts(self.date_start, self.time_start)
