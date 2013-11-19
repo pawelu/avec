@@ -4,7 +4,8 @@
   %p= event.address
   %p= format_datetime(event.datetime_start)
   %p= format_datetime(event.datetime_end)
-  %p Limit osób: #{event.capacity}
+  %p Limit osób: #{event.participants.size} / #{event.capacity}
+  %p Uczestnicy: #{event.participants_list}
 
   - if current_user.can_update?(event)
     = link_to('Edytuj', edit_event_path(event), class: 'btn btn-primary')

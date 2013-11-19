@@ -37,6 +37,10 @@ class Event
     self.datetime_start.present? && self.datetime_end.present?
   }
 
+  def participants_list
+    participants.map(&:nickname).join(', ')
+  end
+
   def set_dates
     year, month, day, hour, minutes = extract_datetime_parts(self.date_start, self.time_start)
     self.datetime_start = Time.zone.local(year, month, day, hour, minutes)
