@@ -1,6 +1,6 @@
-.col-md-2
+.col-md-3
   %h2= link_to event.name, event
-.col-md-7
+.col-md-5
   %p= event.address
   %p= I18n.l(event.datetime_start)
   %p Limit osób: #{event.participants.size} / #{event.capacity}
