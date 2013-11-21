@@ -3,17 +3,16 @@
   font-size: 30px;
 }
 
+h1, h2, h3 {
+  font-family: 'Lobster', cursive;
+}
+
 .dashboard.container {
   margin-top: 50px;
 }
 
-.col-md-3 {
-  border: 1px solid #000;
-  border-radius: 5px;
-}
-.title {
-  font-size: 26px;
-  text-align: center;
+h1.title {
+  text-align: left;
 }
 
 .col-md-1.skill {
