@@ -1,6 +1,4 @@
-  class EventsController < ApplicationController
-  before_action :set_event
-
+class EventsController < ApplicationController
   def index
     @events = Event.all
   end
@@ -10,24 +8,26 @@
   end
 
   def show
+    @event = Event.find(params[:id])
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.user = current_user
+    event = Event.new(event_params)
+    event.user = current_user
     respond_to do |format|
-      if @event.save
+      if event.save
         format.html { redirect_to root_path, notice: 'New event was created.' }
-        format.json { render action: 'show', status: :created, location: @event }
+        format.json { render action: 'show', status: :created, location: event }
       else
         format.html { render action: 'new' }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.json { render json: event.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
-    @event.assign_attributes(event_params)
+    event = Event.find(params[:id])
+    event.assign_attributes(event_params)
     respond_to do |format|
       if @event.save
         format.html { redirect_to root_path, notice: 'Yupi!' }
@@ -40,7 +40,8 @@
   end
 
   def destroy
-    @event.destroy
+    event = Event.find(params[:id])
+    event.destroy
     respond_to do |format|
       format.html { redirect_to root_path }
       format.json { head :no_content }
@@ -70,10 +71,6 @@
   end
 
   private
-    def set_event
-      @event = Event.new
-      @event = current_user.events.find(params[:id]) if params[:id]
-    end
 
     def event_params
       params.require(:event).permit(:name, :description, :date_start, :time_start, :date_end, :time_end, :capacity, :address)

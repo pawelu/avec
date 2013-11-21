@@ -1,0 +1,14 @@
+%h1= @event.name
+
+%p= @event.description
+%p= @event.address
+%p= @event.datetime_start
+%p= @event.datetime_end
+%p Limit osób: #{@event.participants.size} / #{@event.capacity}
+
+%strong Uczestnicy
+%ul
+  - @event.participants.each do |participant|
+    %li= participant.nickname
+
+= link_to 'Wróć', root_path
