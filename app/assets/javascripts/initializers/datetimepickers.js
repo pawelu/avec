@@ -1,5 +1,4 @@
 $(function() {
-  var date_start = $('#date_start').attr('value');
 
   $('.datepicker').datepicker({
     onSelect: function(datetext, inst){
@@ -11,10 +10,15 @@ $(function() {
       });
 
       $('#day').text(date);
+
+      var date = $('#date_start').val();
+      var time = $('#time_start').val();
+      $('#event_datetime_start').val(date + ' ' + time);
     }
   });
   $('.datepicker').datepicker('option', 'dateFormat', 'yy-mm-dd')
 
+  var date_start = $('#date_start').attr('value');
   $('#date_start').datepicker('setDate', date_start);
 
   $('.glyphicon.glyphicon-calendar').on('click', function(){
@@ -26,6 +30,10 @@ $(function() {
   $('.timepicker').timepicker({
     onSelect: function(timetext, inst){
       $('#time').text(timetext);
+
+      var date = $('#date_start').val();
+      var time = $('#time_start').val();
+      $('#event_datetime_start').val(date + ' ' + time);
     }
   });
 

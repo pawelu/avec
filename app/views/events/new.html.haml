@@ -3,17 +3,19 @@
   .event-form
     .col-md-6.well
       = form_for(@event) do |f|
+        %h3 Co?
         .field
           = f.label :name, 'Nazwa'
           = f.text_field :name, :class => "span4"
         .field
           = f.label :description, 'Opis'
           = f.text_area :description, :class => "span4"
+        %h3 Gdzie?
         .field
           = f.label :address, 'Adres'
           = f.text_field :address
-        .event-start
-          %h3 Początek
+        %h3 Kiedy?
+        .field
           %strong dn.
           %strong#day= I18n.l(@now, :format => '%d %b %Y')
           = hidden_field_tag :date_start, @now.strftime('%Y-%m-%d'), :class => 'datepicker'
@@ -24,7 +26,8 @@
           = hidden_field_tag :time_start, @now.strftime('%H:%M'), :class => 'timepicker'
           %span.glyphicon.glyphicon-time
 
-          = f.hidden_field :datetime_start
+          = f.hidden_field :datetime_start, value: @now.strftime('%Y-%m-%d %H:%M')
+        %h3 Dodatkowe informacje
         .field
           = f.label :capacity, 'Limit osób'
           = f.text_field :capacity
