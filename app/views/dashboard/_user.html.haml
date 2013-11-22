@@ -1,2 +1,16 @@
-- @events.each do |event|
-  .event= render event
+%h1 Wydarzenia
+
+%ul.nav.nav-tabs
+  %li.active= link_to 'Nadchodzące', '#incoming', 'data-toggle' => 'tab'
+  %li= link_to 'Minione', '#past', 'data-toggle' => 'tab'
+
+.tab-content
+  .tab-pane.active#incoming
+    - if @incoming_events.empty?
+      Brak nadchodzących wydarzeń. Może zechcesz utworzyć #{link_to 'nowe', new_event_path}?
+    - else
+      - @incoming_events.each do |event|
+        .event= render event
+  .tab-pane#past
+    - @past_events.each do |event|
+      .event= render event

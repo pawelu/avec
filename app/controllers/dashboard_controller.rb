@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    @events = Event.incoming
+    @incoming_events = Event.incoming
+    @past_events = Event.past
   end
 end

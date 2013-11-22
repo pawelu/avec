@@ -16,4 +16,5 @@
 //= require jquery.ui.timepicker
 //= require_tree ./initializers
 //= require angular
+//= require bootstrap/tab
 //= require_tree .
