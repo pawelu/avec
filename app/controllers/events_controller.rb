@@ -5,6 +5,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @now = Time.now
   end
 
   def show

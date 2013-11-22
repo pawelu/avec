@@ -25,7 +25,7 @@ class Event
 
   belongs_to :user
 
-  validates_presence_of :name, :description, :address, :capacity
+  validates_presence_of :name, :address
 
   validates_presence_of :date_start, :time_start, :date_end, :time_end, unless: -> {
     self.datetime_start.present? && self.datetime_end.present?

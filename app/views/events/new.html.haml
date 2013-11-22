@@ -1,3 +1,31 @@
 .border-form-div
   %h2.title Nowe wydarzenie
-  = render 'form'
+  .event-form
+    .col-md-6.well
+      = form_for(@event) do |f|
+        .field
+          = f.label :name, 'Nazwa'
+          = f.text_field :name, :class => "span4"
+        .field
+          = f.label :description, 'Opis'
+          = f.text_area :description, :class => "span4"
+        .field
+          = f.label :address, 'Adres'
+          = f.text_field :address
+        .event-start
+          %h3 Początek
+          %strong dn.
+          %strong#day= I18n.l(@now, :format => '%d %b %Y')
+          = hidden_field_tag :date_start, @now.strftime('%Y-%m-%d'), :class => 'datepicker'
+          %span.glyphicon.glyphicon-calendar
+
+          %strong o godz.
+          %strong#time= I18n.l(Time.now, :format => '%H:%M')
+          = hidden_field_tag :time_start, @now.strftime('%H:%M'), :class => 'timepicker'
+          %span.glyphicon.glyphicon-time
+
+          = f.hidden_field :datetime_start
+        .field
+          = f.label :capacity, 'Limit osób'
+          = f.text_field :capacity
+        = f.submit 'Zapisz', :class => 'btn-primary'
