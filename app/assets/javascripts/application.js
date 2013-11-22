@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.datepicker
+//= require jquery.ui.datepicker-pl
 //= require jquery.ui.timepicker
 //= require_tree ./initializers
 //= require angular
