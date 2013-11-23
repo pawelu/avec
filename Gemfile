@@ -20,19 +20,26 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'draper'
 gem 'angularjs-rails', '~> 1.2.0'
+gem 'dotenv-rails'
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
   gem 'colored'
+  gem 'pry-rails'
+end
+
+group :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
-  gem 'pry-rails'
-  gem 'dotenv-rails'
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'database_cleaner'
+  gem 'mongoid-rspec'
 end
