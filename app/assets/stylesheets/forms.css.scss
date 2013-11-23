@@ -15,3 +15,8 @@ event-form {
     margin-top: 10px;
   }
 }
+
+.glyphicon-calendar:before, .glyphicon-time:before {
+  position: relative;
+  left: -6px;
+}

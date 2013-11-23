@@ -3,7 +3,8 @@
 .col-md-5
   %p= event.address
   %p= I18n.l(event.datetime_start)
-  %p Limit osób: #{event.participants.size} / #{event.capacity}
+  - if event.capacity.present?
+    %p Limit osób: #{event.participants.size} / #{event.capacity}
 
 .col-md-3
   - if current_user.can_update?(event)

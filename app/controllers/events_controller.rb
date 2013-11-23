@@ -4,11 +4,14 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
-    @now = Time.now
+    @event = Event.new(datetime_start: Time.now)
   end
 
   def show
+    @event = Event.find(params[:id])
+  end
+
+  def edit
     @event = Event.find(params[:id])
   end
 
@@ -30,12 +33,12 @@ class EventsController < ApplicationController
     event = Event.find(params[:id])
     event.assign_attributes(event_params)
     respond_to do |format|
-      if @event.save
+      if event.save
         format.html { redirect_to root_path, notice: 'Yupi!' }
         format.json { head :no_content }
       else
         format.html { render action: 'index' }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.json { render json: event.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,6 +77,6 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:name, :description, :date_start, :time_start, :date_end, :time_end, :capacity, :address)
+      params.require(:event).permit(:name, :description, :datetime_start, :capacity, :address)
     end
 end
