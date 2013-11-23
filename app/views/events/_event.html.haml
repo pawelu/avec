@@ -1,7 +1,7 @@
 .col-md-3
   %h2= link_to event.name, event
 .col-md-6
-  %p= event.address
+  %p= link_to_map(event.address)
   %p= I18n.l(event.datetime_start)
   - if event.capacity.present?
     %p Limit osób: #{event.participants.size} / #{event.capacity}

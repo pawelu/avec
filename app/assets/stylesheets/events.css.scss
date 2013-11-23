@@ -2,7 +2,6 @@
   border: 1px solid #ddd;
   padding: 5px;
 
-
   &:nth-child(even) {
     border-top: none;
   }
@@ -10,4 +9,14 @@
   form {
     display: inline;
   }
+}
+
+.map {
+  width: 500px;
+  height: 400px;
+  margin-top: 20px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 1px 5px rgba(50,50,50,0.75);
+  -moz-box-shadow: 0px 1px 5px rgba(50,50,50,0.75);
+  box-shadow: 0px 1px 5px rgba(50,50,50,0.75);
 }
