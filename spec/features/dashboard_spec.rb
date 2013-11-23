@@ -13,7 +13,7 @@ describe 'dashboard' do
     before do
       @user = FactoryGirl.create :user
       ActionDispatch::Request::Session.any_instance.stub(:[]).with(:user_id).and_return(@user.id)
-      @event = FactoryGirl.create :event, :date_start => Date.today, :date_end => Date.today
+      @event = FactoryGirl.create :event
     end
 
     it 'shows me info about events' do

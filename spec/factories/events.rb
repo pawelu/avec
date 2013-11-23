@@ -5,11 +5,7 @@ FactoryGirl.define do
 
   factory :event do
     name { generate(:name) }
-    description "Some description"
-    date_start "2013-12-31"
-    time_start "00:00"
-    date_end "2014-01-01"
-    time_end "23:59"
-    capacity 3
+    address "Kraków"
+    datetime_start "2013-12-31 23:59"
   end
 end
