@@ -21,7 +21,3 @@ pl:
         date_end: 'Data zakończenia'
         time_end: 'Godzina zakończenia'
         capacity: 'Limit osób'
-    hints:
-      event:
-        name: 'Podaj nazwę wydarzenia'
-        description: 'Podaj opis wydarzenia'

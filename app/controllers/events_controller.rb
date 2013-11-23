@@ -16,10 +16,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(event_params)
-    event.user = current_user
+    @event = Event.new(event_params)
+    @event.user = current_user
     respond_to do |format|
-      if event.save
+      if @event.save
         format.html { redirect_to root_path, notice: 'New event was created.' }
         format.json { render action: 'show', status: :created, location: event }
       else
@@ -30,15 +30,15 @@ class EventsController < ApplicationController
   end
 
   def update
-    event = Event.find(params[:id])
-    event.assign_attributes(event_params)
+    @event = Event.find(params[:id])
+    @event.assign_attributes(event_params)
     respond_to do |format|
-      if event.save
+      if @event.save
         format.html { redirect_to root_path, notice: 'Yupi!' }
         format.json { head :no_content }
       else
-        format.html { render action: 'index' }
-        format.json { render json: event.errors, status: :unprocessable_entity }
+        format.html { render action: 'edit' }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
   end
