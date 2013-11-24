@@ -11,7 +11,7 @@
         %h3 Kiedy?
         .field
           %strong dn.
-          %strong#day= I18n.l(@event.datetime_start, :format => '%d %b %Y')
+          %strong#day= format_date(@event.datetime_start)
           = hidden_field_tag :date_start, @event.datetime_start.strftime('%Y-%m-%d'), :class => 'datepicker'
           %span.glyphicon.glyphicon-calendar.btn.btn-default
 

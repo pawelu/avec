@@ -2,7 +2,11 @@
   %h2= link_to event.name, event
 .col-md-6
   %p= link_to_map(event.address)
-  %p= I18n.l(event.datetime_start)
+  %p
+    dn.
+    %strong= format_date(event.datetime_start)
+    o godz.
+    %strong= format_time(event.datetime_start)
   - if event.capacity.present?
     %p Limit osób: #{event.participants.size} / #{event.capacity}
 

@@ -2,15 +2,19 @@
   %h1= @event.name
 
   %p= @event.description
-  %p= @event.address
-  %p= @event.datetime_start
-  %p= @event.datetime_end
+  %p= link_to_map(@event.address)
+  %p
+    dn.
+    %strong= format_date(@event.datetime_start)
+    o godz.
+    %strong= format_time(@event.datetime_start)
   %p Limit osób: #{@event.participants.size} / #{@event.capacity}
 
-  %strong Uczestnicy
-  %ul
-    - @event.participants.each do |participant|
-      %li= participant.nickname
+  - if @event.participants.present?
+    %strong Uczestnicy
+    %ul
+      - @event.participants.each do |participant|
+        %li= participant.nickname
 
   = link_to 'Wróć', root_path
 .col-md-4

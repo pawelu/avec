@@ -6,11 +6,11 @@ module ApplicationHelper
   end
 
   def format_date(datetime)
-   datetime.strftime("%Y-%m-%d") if datetime.present?
+   I18n.l(datetime, :format => '%d %b %Y') if datetime.present?
   end
 
   def format_time(datetime)
-    datetime.strftime("%H:%M") if datetime.present?
+    I18n.l(datetime, :format => '%H:%M') if datetime.present?
   end
 
 
