@@ -13,7 +13,8 @@ class Event
   field :capacity,          type: Integer
   field :address,           type: String
 
-  has_many :participants, class_name: 'User'
+  belongs_to :user, inverse_of: :events
+  has_and_belongs_to_many :participants, class_name: 'User', inverse_of: :participations
 
   scope :incoming, -> {
     where(datetime_start: beginning_of_today .. (beginning_of_today + 1.month))
@@ -23,7 +24,6 @@ class Event
     where(:datetime_start.lt => beginning_of_today)
   }
 
-  belongs_to :user
 
   validates_presence_of :name, :address, :datetime_start
 
