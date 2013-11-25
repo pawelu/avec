@@ -12,9 +12,11 @@
 
   - if @event.participants.present?
     %strong Uczestnicy
-    %ul
+    %ul.participants
       - @event.participants.each do |participant|
-        %li= participant.nickname
+        %li
+          = image_tag participant.avatar
+          %strong.nickname= link_to_github(participant.nickname)
 
   = link_to 'Wróć', root_path
 .col-md-4

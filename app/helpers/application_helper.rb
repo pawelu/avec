@@ -38,4 +38,8 @@ module ApplicationHelper
   def map_url(address)
     "https://maps.google.pl/maps?q=#{address}"
   end
+
+  def link_to_github(nickname)
+    link_to nickname, "https://github.com/#{nickname}", target: '_blank'
+  end
 end
