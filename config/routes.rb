@@ -14,6 +14,10 @@ Avec::Application.routes.draw do
     end
   end
 
+  resources :users, only: [:index] do
+    get ':nickname' => 'users#show', on: :collection
+  end
+
   get '/profile' => 'profiles#show'
   get '/settings' => 'profiles#edit'
   resource :profile do
