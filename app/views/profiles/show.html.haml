@@ -1,15 +1,11 @@
 .container
   %nav
-    - if @current_user
+    - if current_user
       .span6
-        %h2
-          %p Profil
-        %h2
-          %p Nick:
-          = @current_user.nickname
-        %h2
-          %p Email:
-          = @current_user.email
+        %h1 Profil użytkownika
+        %p= @current_user.nickname
+        %p= @current_user.email
+        %p Ostatnia aktywność: #{I18n.l(current_user.last_activity_at, :format => '%d %b %Y, %H:%M')}
 %div{"ng-app" => ""}
   %div{"ng-controller" => "SkillCtrl"}
     %h1 Umiejętności: {{getTotalSkills()}}

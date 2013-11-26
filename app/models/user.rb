@@ -10,6 +10,7 @@ class User
   field :nickname, type: String
   field :email, type: String
   field :avatar, type: String
+  field :last_activity_at, type: DateTime
 
   has_many :events, inverse_of: :user
   has_and_belongs_to_many :skills, class_name: 'Skill', index: true
@@ -19,4 +20,8 @@ class User
   has_many :posts
 
   has_and_belongs_to_many :participations, class_name: 'Event', inverse_of: :participants
+
+  def update_last_activity_at
+    self.update_attribute(:last_activity_at, Time.now)
+  end
 end
