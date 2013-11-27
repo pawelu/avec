@@ -42,4 +42,20 @@ module ApplicationHelper
   def link_to_github(nickname)
     link_to nickname, "https://github.com/#{nickname}", target: '_blank'
   end
+
+  def add_event_to_google_calendar_button(event)
+    formatted_time = event.datetime_start.utc.strftime('%Y%m%dT%H%M%SZ')
+    options = {
+      action: 'TEMPLATE',
+      text: event.name,
+      dates: "#{formatted_time}/#{formatted_time}",
+      details: event.description,
+      location: event.address,
+      trp: false,
+    }
+    querystring = options.each_pair.map{|pair| "#{pair.first}=#{pair.last}"}.join('&')
+    google_calendar_icon = image_tag('https://www.google.com/calendar/images/calendar_plus_pl.gif')
+
+    link_to(google_calendar_icon, "http://www.google.com/calendar/render?#{querystring}", target: '_blank')
+  end
 end

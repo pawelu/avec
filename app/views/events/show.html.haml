@@ -8,6 +8,7 @@
     %strong= format_date(@event.datetime_start)
     o godz.
     %strong= format_time(@event.datetime_start)
+  %p= add_event_to_google_calendar_button(@event)
   %p Limit osób: #{@event.participants.size} / #{@event.capacity}
 
   - if @event.participants.present?
