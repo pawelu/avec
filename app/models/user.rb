@@ -19,6 +19,9 @@ class User
   has_many :topics
   has_many :posts
 
+  has_many :sent_messages, class_name: 'Message', inverse_of: :sender
+  has_many :received_messages, class_name: 'Message', inverse_of: :recipient
+
   has_and_belongs_to_many :participations, class_name: 'Event', inverse_of: :participants
 
   def update_last_activity_at
