@@ -4,7 +4,6 @@
       .span6
         %h1 Profil użytkownika
         %p= @current_user.nickname
-        %p= @current_user.email
         %p Ostatnia aktywność: #{I18n.l(current_user.last_activity_at, :format => '%d %b %Y, %H:%M')}
 %div{"ng-app" => ""}
   %div{"ng-controller" => "SkillCtrl"}

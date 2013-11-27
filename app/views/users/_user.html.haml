@@ -1,4 +1,3 @@
 %h2= user.nickname
-%p= user.email
 - if user.last_activity_at
   %p Ostatnia aktywność: #{I18n.l(user.last_activity_at, :format => '%d %b %Y, %H:%M')}
