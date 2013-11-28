@@ -20,6 +20,7 @@
           %strong.nickname= link_to_github(participant.nickname)
 
   = link_to 'Wróć', root_path
+.col-md-2
 .col-md-4
   .map
     %a{href: map_url(@event.address)}= static_map_image_tag(@event.address)

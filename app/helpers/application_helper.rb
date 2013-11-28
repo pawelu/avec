@@ -22,7 +22,7 @@ module ApplicationHelper
     options = {
       center: address,
       zoom: 15,
-      size: '500x400',
+      size: '500x300',
       maptype: 'roadmap',
       sensor: false
     }
