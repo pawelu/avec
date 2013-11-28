@@ -1,0 +1,4 @@
+- unless comment.new_record?
+  .comment
+    %strong= comment.user.nickname
+    = comment.content

@@ -18,6 +18,7 @@ class User
 
   has_many :topics
   has_many :posts
+  has_many :comments
 
   has_many :sent_messages, class_name: 'Message', inverse_of: :sender
   has_many :received_messages, class_name: 'Message', inverse_of: :recipient

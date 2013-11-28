@@ -12,6 +12,7 @@ Avec::Application.routes.draw do
       post :participate
       post :retreat
     end
+    resources :comments
   end
 
   resources :users, only: [:index] do

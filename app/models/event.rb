@@ -15,6 +15,7 @@ class Event
 
   belongs_to :user, inverse_of: :events
   has_and_belongs_to_many :participants, class_name: 'User', inverse_of: :participations
+  has_many :comments
 
   scope :incoming, -> {
     where(datetime_start: beginning_of_today .. (beginning_of_today + 1.month)).order_by(:datetime_start.asc)

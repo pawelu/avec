@@ -24,3 +24,12 @@
 .col-md-4
   .map
     %a{href: map_url(@event.address)}= static_map_image_tag(@event.address)
+
+.clear
+
+.comments
+  = form_for([@event, @comment]) do |f|
+    = f.text_area :content
+    = f.submit 'Dodaj komentarz'
+
+  = render @comments
