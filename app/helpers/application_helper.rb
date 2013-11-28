@@ -2,7 +2,7 @@ require 'uri'
 module ApplicationHelper
 
   def format_datetime(datetime)
-   datetime.strftime("%Y-%m-%d %H:%M") if datetime.present?
+   I18n.l(datetime, format: "%d %b %Y %H:%M") if datetime.present?
   end
 
   def format_date(datetime)

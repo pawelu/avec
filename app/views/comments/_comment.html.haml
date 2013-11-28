@@ -1,4 +1,5 @@
 - unless comment.new_record?
   .comment
+    = format_datetime(comment.created_at)
     %strong= comment.user.nickname
     = comment.content
