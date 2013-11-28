@@ -8,6 +8,9 @@ pl:
               blank: 'Podaj nazwę wydarzenia'
             address:
               blank: 'Podaj adres'
+            capacity:
+              greater_than_or_equal_to: 'Podaj liczbę większą lub równą 2'
+              not_a_number: 'Podaj liczbę większą lub równą 2'
   time:
     formats:
       default: "%d %b %Y"
