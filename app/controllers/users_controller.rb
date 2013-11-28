@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.order_by([:last_activity_at.desc, :name.asc])
   end
 
   def show
