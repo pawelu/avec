@@ -15,9 +15,8 @@ Avec::Application.routes.draw do
     resources :comments
   end
 
-  resources :users, only: [:index] do
-    get ':nickname' => 'users#show', on: :collection
-  end
+  resources :users, only: [:index]
+  get '/users/:nickname' => 'users#show', as: :user
 
   get '/profile' => 'profiles#show'
   get '/settings' => 'profiles#edit'
