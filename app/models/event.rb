@@ -18,11 +18,11 @@ class Event
   has_many :comments
 
   scope :incoming, -> {
-    where(datetime_start: beginning_of_today .. (beginning_of_today + 1.month)).order_by(:datetime_start.asc)
+    where(datetime_start: today..month_later).order_by(:datetime_start.asc)
   }
 
   scope :past, -> {
-    where(:datetime_start.lt => beginning_of_today).order_by(:datetime_start.desc)
+    where(:datetime_start.lt => today).order_by(:datetime_start.desc)
   }
 
 
@@ -37,7 +37,11 @@ class Event
     participants.map(&:nickname).join(', ')
   end
 
-  def self.beginning_of_today
+  def self.today
     Time.zone.now.beginning_of_day
+  end
+
+  def self.month_later
+    self.today + 1.month
   end
 end
