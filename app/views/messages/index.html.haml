@@ -1,1 +1,19 @@
 %h1 Wiadomości
+
+%ul.nav.nav-tabs
+  %li.active= link_to 'Odebrane', '#received', 'data-toggle' => 'tab'
+  %li= link_to 'Wysłane', '#sent', 'data-toggle' => 'tab'
+
+.tab-content
+  .tab-pane.active#incoming
+    - if @received_messages.empty?
+      Brak wiadomości.
+    - else
+      - @received_messages.each do |message|
+        .message= render message
+  .tab-pane#sent
+    - if @sent_messages.empty?
+      Brak wiadomości.
+    - else
+      - @sent_messages.each do |message|
+        .message= render message
