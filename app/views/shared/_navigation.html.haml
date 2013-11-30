@@ -8,9 +8,10 @@
     .collapse.navbar-collapse.navHeaderCollapse
       %ul.nav.navbar-nav.navbar-right
         - if current_user
-          %li= link_to 'Nowe wydarzenie', new_event_path
-          %li= link_to 'Forum', forum_path
-          %li= link_to 'Profil', profile_path
+          %li= link_to '', new_event_path, class: 'octicon octicon-star-add', title: 'Dodaj nowe wydarzenie'
+          %li= link_to '', forum_path, class: 'octicon octicon-megaphone', title: 'Forum'
+          %li= link_to '', profile_path, class: 'octicon octicon-tools', title: 'Profil'
+          %li= link_to '', messages_path, class: 'octicon octicon-comment-discussion'
           %li= link_to current_user.nickname, user_path(current_user.nickname)
           %li= link_to '', logout_path, :method => :delete, class: 'octicon octicon-log-out'
         - else

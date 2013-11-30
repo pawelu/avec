@@ -9,6 +9,13 @@
   font-style:normal;
 }
 
+.navbar-default .navbar-nav > li > a {
+  color: #666666;
+  &:hover {
+    color: black;
+  }
+}
+
 .octicon {
   font: normal normal 20px octicons;
   line-height: 1;
@@ -23,4 +30,20 @@
 
 .octicon-log-out:before {
   content: '\f032';
+}
+
+.octicon-comment-discussion:before {
+  content: '\f04f';
+}
+
+.octicon-star-add:before {
+  content: '\f082';
+}
+
+.octicon-megaphone:before {
+  content: '\f077';
+}
+
+.octicon-tools:before {
+  content: '\f031'
 }
