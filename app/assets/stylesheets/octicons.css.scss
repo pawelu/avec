@@ -9,6 +9,17 @@
   font-style:normal;
 }
 
+.navbar-nav > li.avatar {
+  img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+  }
+  a {
+    display: inline-block;
+  }
+}
+
 .navbar-default .navbar-nav > li > a {
   color: #666666;
   &:hover {

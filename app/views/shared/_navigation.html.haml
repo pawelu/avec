@@ -7,15 +7,16 @@
       %span.icon-bar
     .collapse.navbar-collapse.navHeaderCollapse
       %ul.nav.navbar-nav.navbar-right
+        %li.inline-tooltip
+          %a
         - if current_user
           %li= link_to '', new_event_path, class: 'octicon octicon-star-add', title: 'Dodaj nowe wydarzenie'
           %li= link_to '', forum_path, class: 'octicon octicon-megaphone', title: 'Forum'
           %li= link_to '', profile_path, class: 'octicon octicon-tools', title: 'Profil'
-          %li= link_to '', messages_path, class: 'octicon octicon-comment-discussion'
-          %li= link_to current_user.nickname, user_path(current_user.nickname)
-          %li= link_to '', logout_path, :method => :delete, class: 'octicon octicon-log-out'
+          %li= link_to '', messages_path, class: 'octicon octicon-comment-discussion', title: 'Wiadomości'
+          %li.avatar
+            = image_tag current_user.avatar
+            = link_to current_user.nickname, user_path(current_user.nickname)
+          %li= link_to '', logout_path, :method => :delete, class: 'octicon octicon-log-out', title: 'Wyloguj'
         - else
-          %li
-            %a{href: login_path}
-              Zaloguj
-              %span.octicon.octicon-mark-github
+          %li= link_to '', login_path, class: 'octicon octicon-mark-github', title: 'Zaloguj'
