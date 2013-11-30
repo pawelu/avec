@@ -4,24 +4,24 @@ describe Message do
   it 'does not save message without sender & recipient' do
     message = Message.new
 
-    message.save.should == false
+    expect(message.save).to eq(false)
   end
 
   it 'does not save message without sender or recipient' do
     user = FactoryGirl.create :user
     message = Message.new(sender: user)
 
-    message.save.should == false
+    expect(message.save).to eq(false)
 
     message = Message.new(recipient: user)
-    message.save.should == false
+    expect(message.save).to eq(false)
   end
 
-  it 'saves message with sender & recipient' do
+  it 'saves message with sender, recipient & content' do
     sender = FactoryGirl.create :user
     recipient = FactoryGirl.create :user
-    message = Message.new(sender: sender, recipient: recipient)
+    message = Message.new(sender: sender, recipient: recipient, content: 'Hello')
 
-    message.save.should == true
+    expect(message.save).to eq(true)
   end
 end
