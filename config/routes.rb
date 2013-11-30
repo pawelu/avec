@@ -15,6 +15,8 @@ Avec::Application.routes.draw do
     resources :comments
   end
 
+  resources :messages
+
   resources :users, only: [:index]
   get '/users/:nickname' => 'users#show', as: :user
 
