@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'draper'
 gem 'angularjs-rails', '~> 1.2.0'
 gem 'dotenv-rails'
+gem 'active_model_serializers', '~> 0.8.1'
 
 group :production do
   gem 'rails_12factor'
