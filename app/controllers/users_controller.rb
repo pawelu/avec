@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+  respond_to :json, :html
+
   def index
     @users = User.order_by([:last_activity_at.desc, :name.asc])
+    respond_with(@users)
   end
 
   def show
