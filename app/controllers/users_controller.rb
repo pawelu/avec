@@ -9,4 +9,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(:nickname => params[:nickname])
   end
+
+  def search
+    @users = User.where(:nickname => /^#{params[:term]}.*/).map(&:nickname)
+    respond_with(@users)
+  end
 end

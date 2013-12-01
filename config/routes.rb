@@ -18,6 +18,7 @@ Avec::Application.routes.draw do
   resources :messages
 
   resources :users, only: [:index]
+  get '/users/search' => 'users#search'
   get '/users/:nickname' => 'users#show', as: :user
 
   get '/profile' => 'profiles#show'
