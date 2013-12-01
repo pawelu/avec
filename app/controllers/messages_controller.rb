@@ -3,4 +3,27 @@ class MessagesController < ApplicationController
     @received_messages = current_user.received_messages
     @sent_messages = current_user.sent_messages
   end
+
+  def new
+    @message = Message.new(recipient: params[:recipient])
+  end
+
+  def create
+    recipient = User.find_by(nickname: params[:message][:recipient])
+    @message = Message.new(message_params)
+    @message.sender = current_user
+    @message.recipient = recipient
+
+    if @message.save
+      redirect_to messages_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+    def message_params
+      params.require(:message).permit(:content)
+    end
 end

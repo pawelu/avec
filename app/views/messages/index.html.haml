@@ -1,19 +1,21 @@
 %h1 Wiadomości
 
+= link_to 'Wyślij nową', new_message_path, class: 'new-message btn btn-primary'
+
 %ul.nav.nav-tabs
   %li.active= link_to 'Odebrane', '#received', 'data-toggle' => 'tab'
   %li= link_to 'Wysłane', '#sent', 'data-toggle' => 'tab'
 
 .tab-content
-  .tab-pane.active#incoming
+  .tab-pane.active#received
     - if @received_messages.empty?
       Brak wiadomości.
     - else
       - @received_messages.each do |message|
-        .message= render message
+        .message= render partial: 'received_message', locals: { message: message }
   .tab-pane#sent
     - if @sent_messages.empty?
       Brak wiadomości.
     - else
       - @sent_messages.each do |message|
-        .message= render message
+        .message= render partial: 'sent_message', locals: { message: message }

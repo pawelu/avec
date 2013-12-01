@@ -15,6 +15,7 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.datepicker-pl
 //= require jquery.ui.timepicker
+//= require jquery.ui.autocomplete
 //= require_tree ./initializers
 //= require angular
 //= require bootstrap/transition
