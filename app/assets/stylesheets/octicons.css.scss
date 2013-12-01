@@ -9,24 +9,6 @@
   font-style:normal;
 }
 
-.navbar-nav > li.avatar {
-  img {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-  }
-  a {
-    display: inline-block;
-  }
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #666666;
-  &:hover {
-    color: black;
-  }
-}
-
 .octicon {
   font: normal normal 20px octicons;
   line-height: 1;
@@ -56,5 +38,45 @@
 }
 
 .octicon-tools:before {
-  content: '\f031'
+  content: '\f031';
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-collapse {
+    a.octicon {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      &:before {
+        font-family: octicons;
+        font-size: 14px;
+      }
+    }
+
+    .inline-tooltip {
+      display: none;
+    }
+
+    .octicon-mark-github:before {
+      content: attr(title) ' \f00a';
+    }
+
+    .octicon-log-out:before {
+      content: attr(title) ' \f032';
+    }
+
+    .octicon-comment-discussion:before {
+      content: attr(title) ' \f04f';
+    }
+
+    .octicon-star-add:before {
+      content: attr(title) ' \f082';
+    }
+
+    .octicon-megaphone:before {
+      content: attr(title) ' \f077';
+    }
+
+    .octicon-tools:before {
+      content: attr(title) ' \f031';
+    }
+  }
 }
