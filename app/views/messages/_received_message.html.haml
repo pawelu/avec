@@ -1,4 +1,6 @@
 %p.sender
   %strong Od:
   = message.sender.nickname
+  %strong dn.
+  = format_datetime(message.created_at)
 %p.content= message.content

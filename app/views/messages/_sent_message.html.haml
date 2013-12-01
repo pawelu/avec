@@ -1,4 +1,6 @@
 %p.recipient
   %strong Do:
   = message.recipient.nickname
+  %strong dn.
+  = format_datetime(message.created_at)
 %p.content= message.content
