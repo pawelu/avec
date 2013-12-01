@@ -41,6 +41,10 @@
   content: '\f031';
 }
 
+.octicon-organization:before {
+  content: '\f037';
+}
+
 @media screen and (max-width: 767px) {
   .navbar-collapse {
     a.octicon {
@@ -77,6 +81,10 @@
 
     .octicon-tools:before {
       content: attr(title) ' \f031';
+    }
+
+    .octicon-organization:before {
+      content: attr(title) ' \f037';
     }
   }
 }

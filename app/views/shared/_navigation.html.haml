@@ -14,6 +14,7 @@
           %li= link_to '', forum_path, class: 'octicon octicon-megaphone', title: 'Forum'
           %li= link_to '', profile_path, class: 'octicon octicon-tools', title: 'Profil'
           %li= link_to '', messages_path, class: 'octicon octicon-comment-discussion', title: 'Wiadomości'
+          %li= link_to '', users_path, class: 'octicon octicon-organization', title: 'Ludzie'
           %li.avatar
             = image_tag current_user.avatar
             = link_to current_user.nickname, user_path(current_user.nickname)
