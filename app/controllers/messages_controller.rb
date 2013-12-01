@@ -9,7 +9,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    recipient = User.find_by(nickname: params[:message][:recipient])
+    begin
+      recipient = User.find_by(nickname: params[:message][:recipient])
+    rescue Mongoid::Errors::DocumentNotFound
+      recipient = nil
+    end
+
     @message = Message.new(message_params)
     @message.sender = current_user
     @message.recipient = recipient
