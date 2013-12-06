@@ -1,3 +1,11 @@
 table.users {
   width: 100%;
 }
+
+h2.nickname {
+  a {
+    position: relative;
+    bottom: 12px;
+    left: 4px;
+  }
+}

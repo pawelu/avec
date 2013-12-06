@@ -39,8 +39,12 @@ module ApplicationHelper
     "https://maps.google.pl/maps?q=#{address}"
   end
 
+  def github_url(path)
+    "https://github.com/#{path}"
+  end
+
   def link_to_github(nickname)
-    link_to nickname, "https://github.com/#{nickname}", target: '_blank'
+    link_to nickname, github_url(nickname), target: '_blank'
   end
 
   def add_event_to_google_calendar_button(event)
