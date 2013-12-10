@@ -2,14 +2,19 @@
   %h1= @event.name
 
   %p= @event.description
-  %p= link_to_map(@event.address)
   %p
+    .icon= fa_icon 'map-marker'
+    = @event.address
+    (#{link_to 'mapa', map_url(@event.address)})
+  %p
+    .icon= fa_icon 'calendar'
     dn.
     %strong= format_date(@event.datetime_start)
     o godz.
     %strong= format_time(@event.datetime_start)
-  %p= add_event_to_google_calendar_button(@event)
-  %p Limit osób: #{@event.participants.size} / #{@event.capacity}
+  %p
+    .icon= fa_icon 'chevron-circle-right'
+    Limit osób: #{@event.participants.size} / #{@event.capacity}
 
   - if @event.participants.present?
     %strong Uczestnicy
@@ -18,6 +23,8 @@
         %li
           = image_tag participant.avatar
           %strong.nickname= link_to_github(participant.nickname)
+
+  %p= add_event_to_google_calendar_button(@event)
 
   = link_to 'Wróć do listy wydarzeń', root_path
 .col-md-2
