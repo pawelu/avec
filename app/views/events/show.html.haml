@@ -1,44 +1,60 @@
-.col-md-4
-  %h1= @event.name
-
-  %p= @event.description
-  %p
-    .icon= fa_icon 'map-marker'
-    = @event.address
-    (#{link_to 'mapa', map_url(@event.address)})
-  %p
-    .icon= fa_icon 'calendar'
-    dn.
-    %strong= format_date(@event.datetime_start)
-    o godz.
-    %strong= format_time(@event.datetime_start)
-  %p
-    .icon= fa_icon 'chevron-circle-right'
-    Limit osób: #{@event.participants.size} / #{@event.capacity}
-
-  - if @event.participants.present?
-    %strong Uczestnicy
-    %ul.participants
-      - @event.participants.each do |participant|
-        %li
-          = image_tag participant.avatar
-          %strong.nickname= link_to_github(participant.nickname)
-
-  %p= add_event_to_google_calendar_button(@event)
-
-  = link_to 'Wróć do listy wydarzeń', root_path
-.col-md-2
-.col-md-4
-  .map
-    %a{href: map_url(@event.address)}= static_map_image_tag(@event.address)
-
-.clear
-
-.comments.col-md-12
-  %h2 Komentarze
-  .col-md-4.well
-    = simple_form_for([@event, @comment], defaults: { wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } }) do |f|
-      = f.input :content, label: false, as: :text, input_html: { rows: 4 }
-      = f.button :submit, 'Dodaj', :class => 'btn-primary'
+.event
   .col-md-4
-    = render @comments
+    %h1
+      = link_to(fa_icon('chevron-left'), root_path)
+      = @event.name
+
+    %p= @event.description
+
+    %p
+      .icon= fa_icon 'map-marker'
+      = @event.address
+      (#{link_to 'mapa', map_url(@event.address)})
+
+    %p
+      .icon= fa_icon 'calendar'
+      dn.
+      %strong= format_date(@event.datetime_start)
+      o godz.
+      %strong= format_time(@event.datetime_start)
+
+    %p
+      .icon= fa_icon 'chevron-circle-right'
+      Limit osób: #{@event.participants.size} / #{@event.capacity}
+
+    %p= add_event_to_google_calendar_button(@event)
+
+    = link_to 'Wróć do listy wydarzeń', root_path
+  .col-md-2
+  .col-md-4
+    - if @event.participants.present?
+      %h2 Uczestnicy
+      %ul.participants
+        - @event.participants.each do |participant|
+          %li
+            = image_tag participant.avatar
+            %strong.nickname= link_to_github(participant.nickname)
+
+    - if current_user.can_update?(@event)
+      = link_to('Edytuj', edit_event_path(@event), class: 'btn btn-primary')
+
+    - if current_user.can_delete?(@event)
+      = link_to 'Usuń', @event, method: :delete, data: { confirm: 'Czy chcesz na pewno usunąć to wydarzenie?' }, class: 'btn btn-danger'
+
+    - if @event.participants.include?(current_user)
+      = form_for @event, url: retreat_event_path(@event), method: 'post' do |f|
+        = f.submit 'Zrezygnuj', class: 'btn btn-warning'
+    - else
+      = form_for @event, url: participate_event_path(@event), method: 'post' do |f|
+        = f.submit 'Dołącz', class: 'btn btn-success'
+
+  .clear
+
+  .comments.col-md-12
+    %h2 Komentarze
+    .col-md-4.well
+      = simple_form_for([@event, @comment], defaults: { wrapper_html: { class: 'form-group'}, input_html: { class: 'form-control' } }) do |f|
+        = f.input :content, label: false, as: :text, input_html: { rows: 4 }
+        = f.button :submit, 'Dodaj', :class => 'btn-primary'
+    .col-md-4
+      = render @comments

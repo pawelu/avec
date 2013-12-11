@@ -1,5 +1,8 @@
-.event {
+.tab-content .event {
   border: 1px solid #ddd;
+}
+
+.event {
   padding: 5px;
 
   &:nth-child(even) {
