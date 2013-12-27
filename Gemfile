@@ -23,6 +23,7 @@ gem 'draper'
 gem 'angularjs-rails', '~> 1.2.0'
 gem 'dotenv-rails'
 gem 'active_model_serializers', '~> 0.8.1'
+gem 'backbone-on-rails', '~> 1.1.0.0'
 
 group :production do
   gem 'rails_12factor'
@@ -34,9 +35,6 @@ group :development, :test do
   gem 'awesome_print'
   gem 'colored'
   gem 'pry-rails'
-end
-
-group :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
@@ -44,4 +42,5 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'mongoid-rspec'
+  gem 'jasminerice', github: 'bradphelan/jasminerice'
 end
