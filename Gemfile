@@ -2,27 +2,48 @@ source 'https://rubygems.org'
 
 ruby '2.1.0'
 
+# framework
 gem 'rails', '4.0.1'
-gem 'sass-rails', '~> 4.0.0'
+
 gem 'uglifier', '>= 1.3.0'
+
+# stylesheets
+gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+gem 'font-awesome-rails', '>= 4.0.3.0'
+
+# scripts: Coffee, JavaScript
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 4.0.5'
+
+# JSON, serialization
 gem 'jbuilder', '~> 1.2'
+gem 'draper'
+gem 'active_model_serializers', '~> 0.8.1'
+
+# server
 gem 'thin', '>= 1.6.0'
+
+# authentication
 gem 'omniauth', '>= 1.1.4'
 gem 'omniauth-github', '>= 1.1.1'
+
+# authorization
 gem 'authority', '>= 2.9.0'
 gem 'rolify', '>= 3.2.0'
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
-gem 'font-awesome-rails', '>= 4.0.3.0'
+
+# storage
 gem 'mongoid', github: 'mongoid/mongoid'
+
+# templates, views
 gem 'haml-rails'
 gem 'simple_form'
-gem 'draper'
-gem 'angularjs-rails', '~> 1.2.0'
+
+# configuration
 gem 'dotenv-rails'
-gem 'active_model_serializers', '~> 0.8.1'
+
+gem 'angularjs-rails', '~> 1.2.0'
 gem 'backbone-on-rails', '~> 1.1.0.0'
 
 group :production do
