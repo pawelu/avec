@@ -15,6 +15,8 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.datepicker-pl
 //= require jquery.ui.timepicker
+//= require moment
+//= require moment/pl
 
 //= require underscore
 //= require handlebars
