@@ -47,6 +47,7 @@ gem 'angularjs-rails', '~> 1.2.0'
 gem 'backbone-on-rails', '~> 1.1.0.0'
 gem 'marionette-rails', '~> 1.4.1'
 gem 'handlebars_assets', '~> 0.15'
+gem 'momentjs-rails', '~> 2.4.0'
 
 group :production do
   gem 'rails_12factor'
