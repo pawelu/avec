@@ -4,9 +4,3 @@
   %tr
     %th Nazwa użytkownika
     %th Ostatnia aktywność
-  - @users.each do |user|
-    %tr
-      %td= link_to user.nickname, user_path(user.nickname)
-      %td
-        - if user.last_activity_at
-          = I18n.l(user.last_activity_at, :format => '%d %b %Y, %H:%M')

@@ -8,6 +8,10 @@ Avec.Routers.Router = Backbone.Router.extend({
   },
 
   index: function() {
-    console.log('users#index')
+    var users = new Avec.Collections.Users();
+    users.fetch();
+
+    var usersView = new Avec.Views.Users({ collection: users });
+    usersView.render();
   }
 })

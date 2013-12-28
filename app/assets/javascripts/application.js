@@ -17,11 +17,14 @@
 //= require jquery.ui.timepicker
 
 //= require underscore
+//= require handlebars
 //= require backbone
+//= require backbone.marionette
 
 //= require avec
 //= require_tree ./models
 //= require_tree ./collections
+//= require ./views/user
 //= require_tree ./views
 //= require_tree ./routers
 
