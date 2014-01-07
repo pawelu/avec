@@ -20,7 +20,6 @@ pl:
         time_start: 'Godzina rozpoczęcia'
         date_end: 'Data zakończenia'
         time_end: 'Godzina zakończenia'
-        capacity: 'Limit osób'
       message:
         recipient: 'Do:'
         content: 'Treść'

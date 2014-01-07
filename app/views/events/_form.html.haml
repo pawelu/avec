@@ -21,6 +21,4 @@
           %span.glyphicon.glyphicon-time.btn.btn-default
 
           = f.hidden_field :datetime_start, value: @event.datetime_start.strftime('%Y-%m-%d %H:%M')
-        %h3 Dodatkowe informacje
-        = f.input :capacity, as: :integer, :input_html => { :min => 2 }
         = f.button :submit, 'Zapisz', :class => 'btn-primary'

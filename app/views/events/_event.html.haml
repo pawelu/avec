@@ -7,8 +7,6 @@
     %strong= format_date(event.datetime_start)
     o godz.
     %strong= format_time(event.datetime_start)
-  - if event.capacity.present?
-    %p Limit osób: #{event.participants.size} / #{event.capacity}
 
 .col-md-3
   - if current_user.can_update?(event)

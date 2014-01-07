@@ -10,7 +10,6 @@ class Event
   field :datetime_start,    type: DateTime
   field :datetime_end,      type: DateTime
   field :done,              type: Boolean, default: false
-  field :capacity,          type: Integer
   field :address,           type: String
 
   belongs_to :user, inverse_of: :events
@@ -27,11 +26,6 @@ class Event
 
 
   validates_presence_of :name, :address, :datetime_start
-
-  validates :capacity, numericality: {
-    only_integer: true,
-    greater_than_or_equal_to: 2
-  }, unless: -> { self.capacity.blank? }
 
   def participants_list
     participants.map(&:nickname).join(', ')
