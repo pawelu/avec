@@ -16,9 +16,6 @@ $(function() {
     }
   });
 
-  var date_start = $('#date_start').attr('value');
-  $('#date_start').datepicker('setDate', date_start);
-
   $('.glyphicon.glyphicon-calendar').on('click', function(){
     $('#date_start').datepicker('show');
   });
