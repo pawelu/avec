@@ -1,4 +1,9 @@
 $(function() {
+  function setDateTime(){
+    var date = $('#date_start').val();
+    var time = $('#time_start').val();
+    $('#event_datetime_start').val(date + ' ' + time);
+  }
 
   $('#date_start').datepicker({
     minDate: 0,
@@ -13,10 +18,7 @@ $(function() {
       });
 
       $('#day').text(date);
-
-      var date = $('#date_start').val();
-      var time = $('#time_start').val();
-      $('#event_datetime_start').val(date + ' ' + time);
+      setDateTime();
     }
   });
 
@@ -26,19 +28,14 @@ $(function() {
   $('.glyphicon.glyphicon-calendar').on('click', function(){
     $('#date_start').datepicker('show');
   });
-});
 
-$(function() {
   $('#time_start').timepicker({
     showPeriodLabels: false,
     hourText: 'Godzina',
     minuteText: 'Minuta',
     onSelect: function(timetext, inst){
       $('#time').text(timetext);
-
-      var date = $('#date_start').val();
-      var time = $('#time_start').val();
-      $('#event_datetime_start').val(date + ' ' + time);
+      setDateTime();
     }
   });
 
