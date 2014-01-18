@@ -1,6 +1,9 @@
 $(function() {
 
-  $('.datepicker').datepicker({
+  $('#date_start').datepicker({
+    minDate: 0,
+    maxDate: "+3Y",
+    dateFormat: 'yy-mm-dd',
     onSelect: function(datetext, inst){
       var date = $.datepicker.formatDate( "d M yy", new Date(datetext), {
         dayNamesShort: $.datepicker.regional[ "pl" ].dayNamesShort,
@@ -16,7 +19,6 @@ $(function() {
       $('#event_datetime_start').val(date + ' ' + time);
     }
   });
-  $('.datepicker').datepicker('option', 'dateFormat', 'yy-mm-dd')
 
   var date_start = $('#date_start').attr('value');
   $('#date_start').datepicker('setDate', date_start);
@@ -27,7 +29,10 @@ $(function() {
 });
 
 $(function() {
-  $('.timepicker').timepicker({
+  $('#time_start').timepicker({
+    showPeriodLabels: false,
+    hourText: 'Godzina',
+    minuteText: 'Minuta',
     onSelect: function(timetext, inst){
       $('#time').text(timetext);
 

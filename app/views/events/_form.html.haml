@@ -12,12 +12,12 @@
         .field
           %strong dn.
           %strong#day= format_date(@event.datetime_start)
-          = hidden_field_tag :date_start, @event.datetime_start.strftime('%Y-%m-%d'), :class => 'datepicker'
+          = hidden_field_tag :date_start, @event.datetime_start.strftime('%Y-%m-%d')
           %span.glyphicon.glyphicon-calendar.btn.btn-default
 
           %strong o godz.
           %strong#time= I18n.l(@event.datetime_start, :format => '%H:%M')
-          = hidden_field_tag :time_start, @event.datetime_start.strftime('%H:%M'), :class => 'timepicker'
+          = hidden_field_tag :time_start, @event.datetime_start.strftime('%H:%M')
           %span.glyphicon.glyphicon-time.btn.btn-default
 
           = f.hidden_field :datetime_start, value: @event.datetime_start.strftime('%Y-%m-%d %H:%M')
