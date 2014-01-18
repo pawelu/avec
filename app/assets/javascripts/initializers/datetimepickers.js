@@ -7,16 +7,10 @@ $(function() {
 
   $('#date_start').datepicker({
     minDate: 0,
-    maxDate: "+3Y",
+    maxDate: '+3Y',
     dateFormat: 'yy-mm-dd',
     onSelect: function(datetext, inst){
-      var date = $.datepicker.formatDate( "d M yy", new Date(datetext), {
-        dayNamesShort: $.datepicker.regional[ "pl" ].dayNamesShort,
-        dayNames: $.datepicker.regional[ "pl" ].dayNames,
-        monthNamesShort: $.datepicker.regional[ "pl" ].monthNamesShort,
-        monthNames: $.datepicker.regional[ "pl" ].monthNames
-      });
-
+      var date = $.datepicker.formatDate('d M yy', new Date(datetext));
       $('#day').text(date);
       setDateTime();
     }
