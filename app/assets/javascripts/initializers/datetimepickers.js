@@ -16,7 +16,7 @@ $(function() {
     }
   });
 
-  $('glyphicon-calendar').on('click', function(){
+  $('.glyphicon-calendar').on('click', function(){
     $('#date_start').datepicker('show');
   });
 
@@ -30,7 +30,7 @@ $(function() {
     }
   });
 
-  $('glyphicon-time').on('click', function(){
+  $('.glyphicon-time').on('click', function(){
     $('#time_start').timepicker('show');
   });
 });
