@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby '2.1.0'
+ruby '2.1.0'
 
 # framework
 gem 'rails', '4.0.2'
@@ -63,7 +63,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails'
   gem 'capybara'
-  #gem 'capybara-webkit'
+  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'mongoid-rspec'
   gem 'jasminerice', github: 'bradphelan/jasminerice'
